@@ -40,8 +40,6 @@
                 @default
             @endswitch
         </div>
-
-
     @endif
 
 @endsection
