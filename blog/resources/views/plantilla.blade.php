@@ -25,9 +25,6 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('about-us') }}">Nosotros</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="www.google.es">Google</a>
-          </li>
         </ul>
         @yield('seccion')
     </div>

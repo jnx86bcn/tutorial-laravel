@@ -1,6 +1,8 @@
 <?php
 
-Route::get('/', 'PagesController@index') ->name('home');;
+Route::get('/', 'PagesController@index') ->name('home');
+
+Route::get('/detail/{id}', 'PagesController@detail') ->name('notes.details');
 
 Route::get('blog','PagesController@blog' )->name('blog');
 

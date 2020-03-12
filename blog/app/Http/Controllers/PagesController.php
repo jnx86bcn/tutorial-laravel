@@ -8,8 +8,13 @@ use App;
 class PagesController extends Controller
 {
     public function index() {
-        $notas = App\Nota::all();
-        return view('Welcome',compact('notas'));
+        $notes = App\Note::all();
+        return view('Welcome',compact('notes'));
+    }
+
+    public function detail($id) {
+        $note = App\Note::findOrFail($id);
+        return view('notes.details',compact('note'));
     }
 
     public function photos() {
