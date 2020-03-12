@@ -8,16 +8,27 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Notas</title>
   </head>
   <body>
-    <nav class="nav">
-      <a class="nav-link active" href="{{ route('blog') }}">Blog</a>
-      <a class="nav-link" href="{{ route('photos') }}">Fotos</a>
-      <a class="nav-link" href="{{ route('about-us') }}">Nosotros</a>
-      <a class="nav-link" href="#">Google</a>
-    </nav>
-    <div class="container">
+    <div class="container my-4">
+        <ul class="nav nav-pills my-4">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('home') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('blog') }}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('photos') }}">Fotos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('about-us') }}">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="www.google.es">Google</a>
+          </li>
+        </ul>
         @yield('seccion')
     </div>
     <!-- Optional JavaScript -->

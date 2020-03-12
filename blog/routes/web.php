@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index') ->name('home');;
 
 Route::get('blog','PagesController@blog' )->name('blog');
 
