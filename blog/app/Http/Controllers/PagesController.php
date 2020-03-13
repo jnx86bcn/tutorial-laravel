@@ -12,6 +12,23 @@ class PagesController extends Controller
         return view('Welcome',compact('notes'));
     }
 
+    public function create(Request $request) {
+        // return $request->all();
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        $noteNew = new App\Note;
+        $noteNew->name = $request->name;
+        $noteNew->description = $request->description;
+        
+        $noteNew->save();
+
+        return back()->with('message','Your comment has been added');//return user to the original view
+    }
+
     public function detail($id) {
         $note = App\Note::findOrFail($id);
         return view('notes.details',compact('note'));
