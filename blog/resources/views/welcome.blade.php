@@ -24,12 +24,12 @@
     </div>
     @enderror
     <div class="form-group">
-      <label for="name">Nombre</label>
-    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+        <label for="name">Nombre</label>
+        <input type="text" class="form-control" name="name" value="{{ old('name') }}">
     </div>
     <div class="form-group">
-      <label for="description">Descripción</label>
-      <input type="text" class="form-control" name="description"  value="{{ old('description') }}">
+        <label for="description">Descripción</label>
+        <input type="text" class="form-control" name="description"  value="{{ old('description') }}">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -41,7 +41,7 @@
             <th scope="col">id</th>
             <th scope="col">Name</th>
             <th scope="col">Description</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -52,7 +52,14 @@
                 <a href="{{ route('notes.details',$note) }}">{{ $note->name }}</a>
             </td>
             <td>{{ $note->description }}</td>
-            <td>@mdo</td>
+            <td>
+                <a href="{{ route('notes.edit',$note->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                <form class="d-inline" action="{{ route('notes.delete',$note->id) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                </form>
+            </td>
         </tr> 
         @endforeach
     </tbody>
