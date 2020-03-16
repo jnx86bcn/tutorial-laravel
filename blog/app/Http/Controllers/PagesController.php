@@ -8,7 +8,7 @@ use App;
 class PagesController extends Controller
 {
     public function index() {
-        $notes = App\Note::all();
+        $notes = App\Note::paginate(5);
         return view('Welcome',compact('notes'));
     }
 

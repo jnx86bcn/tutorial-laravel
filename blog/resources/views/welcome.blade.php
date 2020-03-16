@@ -2,6 +2,8 @@
 
 @section('seccion')
 
+<h1 class="display-4">Notas</h1>
+
 @if (session('message'))
     <div class="alert alert-success alert-dismissible">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -9,7 +11,7 @@
     </div>
 @endif
 
-<form action="{{ route('notes.create') }}" method="POST">
+<form class="form-group" action="{{ route('notes.create') }}" method="POST">
     @csrf
     @error('name')
     <div class="alert alert-danger alert-dismissible">
@@ -34,7 +36,6 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-<h1 class="display-4">Notas</h1>
 <table class="table">
     <thead>
         <tr>
@@ -63,5 +64,8 @@
         </tr> 
         @endforeach
     </tbody>
-</table> 
+</table>
+
+{{ $notes->links() }}
+
 @endsection
